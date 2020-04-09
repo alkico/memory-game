@@ -10,15 +10,27 @@
     <div class="game-header">
       <h1>MEMORY 2.0</h1>
       <div class="game-stats">
-        <p>Level: <span id="level">1</span></p>
+        <!-- <p>Level: <span id="level">1</span></p> -->
+        <div class="select-level" style="width: 200px;">
+          <select>
+            <option value="0">Select level:</option>
+            <option value="1">Level 1</option>
+            <option value="2">Level 2</option>
+            <option value="3">Level 3</option>
+          </select>
+        </div>
         <p id="count-wrong-guesses">Mistakes: <span>0</span></p>
         <div>
           <p id="timer">Time: 0:00</p>
         </div>
       </div>
     </div>
-    <!--player levels: beginner(12 cards, images), intermediate(24 cards quotes/names+imgs), advanced (48cards quotes/names+imgs split)-->
-    <div id="memory-board"></div>
+    <div id="memory-board">
+      <!-- <div id="popup-congrats" class="modal">
+        <div class="modal-content">text here</div>
+      </div> -->
+    </div>
+
     <footer>
       <div class="start-game-button">Start new game</div>
     </footer>

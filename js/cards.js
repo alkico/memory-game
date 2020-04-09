@@ -8,7 +8,65 @@ const cardsLevel1 = [
     name: "Oscar Wilde",
     quote: "I don't want to go to heaven. None of my friends are there.",
     img: "laura-chouette-oscar wilde_WwtFSOQGgo-unsplash.jpg",
-  } /*
+  },
+  {
+    name: "Ozzy Osbourne",
+    quote:
+      "I think MTV should consider using subtitles. Half the time, even I can't understand what the fuck I'm talking about.",
+    img: "noun_rock star_2382957.png",
+  },
+  {
+    name: "Ozzy Osbourne",
+    quote:
+      "I think MTV should consider using subtitles. Half the time, even I can't understand what the fuck I'm talking about.",
+    img: "noun_rock star_2382957.png",
+  },
+  {
+    name: "Billy Connolly",
+    quote:
+      "I've always wanted to go to Switzerland to see what the army does with those wee red knives.”",
+    img: "Dr-seuss-character-clip-art-free-clipart-images.gif",
+  },
+  {
+    name: "Dr. Seuss",
+    quote: "I meant what I said and I said what I meant.",
+    img: "Dr-seuss-character-clip-art-free-clipart-images.gif",
+  },
+  {
+    name: "Dr. Seuss",
+    quote: "I meant what I said and I said what I meant.",
+    img: "Dr-seuss-character-clip-art-free-clipart-images.gif",
+  },
+  {
+    name: "Billy Connolly",
+    quote:
+      "I've always wanted to go to Switzerland to see what the army does with those wee red knives.",
+    img: "Dr-seuss-character-clip-art-free-clipart-images.gif",
+  },
+  {
+    name: "Barry Humphries",
+    quote:
+      "Australia is an outdoor country. People only go inside to use the toilet. And that's only a recent development.",
+    img: "noun_Glasses dame edna_59781.png",
+  },
+  {
+    name: "Barry Humphries",
+    quote:
+      "Australia is an outdoor country. People only go inside to use the toilet. And that's only a recent development.",
+    img: "noun_Glasses dame edna_59781.png",
+  },
+];
+const cardsLevel2 = [
+  {
+    name: "Oscar Wilde",
+    quote: "I don't want to go to heaven. None of my friends are there.",
+    img: "laura-chouette-oscar wilde_WwtFSOQGgo-unsplash.jpg",
+  },
+  {
+    name: "Oscar Wilde",
+    quote: "I don't want to go to heaven. None of my friends are there.",
+    img: "laura-chouette-oscar wilde_WwtFSOQGgo-unsplash.jpg",
+  },
   {
     name: "Ozzy Osbourne",
     quote:
@@ -144,14 +202,20 @@ const cardsLevel1 = [
     quote:
       "I like pigs. Dogs look up to us. Cats look down on us. Pigs treat us as equals.",
     img: "noun_Churchill_2884549.png",
-  },*/,
+  },
 ];
 
-/* {
+cardsLevel3 = [
+  {
     name: "Will Ferrel",
     quote: "I was so drunk, I thought a tube of toothpaste was atronaut food.",
     img: "Dr-seuss-character-clip-art-free-clipart-images.gif",
   },
-  */
+  {
+    name: "Will Ferrel",
+    quote: "I was so drunk, I thought a tube of toothpaste was atronaut food.",
+    img: "Dr-seuss-character-clip-art-free-clipart-images.gif",
+  },
+];
 
-const cards = [cardsLevel1];
+const cards = [cardsLevel1, cardsLevel2, cardsLevel3];
