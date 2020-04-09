@@ -1,6 +1,5 @@
-const memoryGame = new MemoryGame(cards);
+//const memoryGame = new MemoryGame(cards);
 let memoryBoard = document.querySelector("#memory-board");
-let memoryCard = document.querySelectorAll(".card");
 let wrongGuesses = 0;
 //SETTIMER FUNCTION
 let timer = document.getElementById("timer");
@@ -29,6 +28,7 @@ function resetValues() {
   matchedCards = [];
   pickedCards = [];
   cardWasFlipped = false;
+  clearInterval(interval);
 }
 
 function startGame() {
@@ -38,10 +38,12 @@ function startGame() {
   selectLevel(objectInput);
 }
 function selectLevel(event) {
+  resetValues();
   console.log(event.target.value);
   inputValue = parseInt(event.target.value); //line 41 here because of 46
   console.log(inputValue);
   loadCards(event.target.value - 1);
+  startTimer();
 }
 
 function loadCards(levelCards) {
@@ -55,7 +57,7 @@ function loadCards(levelCards) {
     html += `</div>`;
   });
   memoryBoard.innerHTML = html; // Add all the divs to the HTML.
-  memoryBoard.innerHTML += `<div id="popup-congrats" class="hide"><div class="modal-content">text here</div></div>`;
+  memoryBoard.innerHTML += `<div id="popup-congrats" class="hide"><div class="modal-content" style="background-image: url('../imgs/H8EN.gif')">Nicely done!</div></div>`;
   document
     .querySelectorAll(".card")
     .forEach((card) => card.addEventListener("click", flipCard));
@@ -181,7 +183,7 @@ function congratulations() {
     let finalTime = timer.innerHTML;
     document.getElementById("popup-congrats").classList.remove("hide");
     console.log("Congratulations, you have found all the pairs!");
-    matchedCards = [];
+    //matchedCards = [];
     document
       .querySelector("#popup-congrats")
       .addEventListener("click", startGame);
