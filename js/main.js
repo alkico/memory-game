@@ -1,43 +1,39 @@
 const memoryGame = new MemoryGame(cards);
 let memoryBoard = document.querySelector("#memory-board");
 let memoryCard = document.querySelectorAll(".card");
-//let modal = document.getElementById("popup-congrats");
-//refactor let memoryCards = doesn't work when I try to call within functions
-//START GAME AND SHUFFLE CARDS
-//COUNT MISTAKES
 let wrongGuesses = 0;
 //SETTIMER FUNCTION
 let timer = document.getElementById("timer");
 let seconds = 0;
 let minutes = 0;
 let interval;
-//FLIPCARDS, MATCHCARDS FUNCTIONs
+//FLIPCARDS, MATCHCARDS FUNCTIONS
 let cardWasFlipped = false;
 let firstCard, secondCard;
 let pickedCards = [];
 let shuffledCards = undefined;
 let matchedCards = [];
+//SELECT LEVEL FUNCTION
 let level = 0;
 let inputValue;
-//let dropdownLevels = document.getElementById("select-level");
-//let dropdownLevels = document.querySelectorAll(
-//  ".select-level > select > option"
-//);
-
 //EVENT LISTENERS
 document
   .querySelector(".start-game-button")
   .addEventListener("click", startGame);
-//document.querySelector(".select-level").addEventListener("click", selectLevel);
 document.querySelector(".select-level").addEventListener("input", selectLevel);
 
-function startGame() {
-  console.log("howmanygames");
+function resetValues() {
+  seconds = 0;
+  minutes = 0;
   resetWrongGuesses();
-  //console.log("guesses");
+  matchedCards = [];
+  pickedCards = [];
+  cardWasFlipped = false;
+}
+
+function startGame() {
+  resetValues();
   startTimer();
-  //console.log("timer");
-  //console.log("reset");
   let objectInput = { target: { value: inputValue } };
   selectLevel(objectInput);
 }
@@ -46,23 +42,6 @@ function selectLevel(event) {
   inputValue = parseInt(event.target.value); //line 41 here because of 46
   console.log(inputValue);
   loadCards(event.target.value - 1);
-  // let dropdownLevels = document.querySelectorAll(
-  //   ".select-level > select > option"
-  // );
-  // console.log(dropdownLevels, typeof dropdownLevels);
-  //console.log(
-  //  document.querySelectorAll(".select-level > select > option")[1].value
-  //);
-  //let levelChosen = dropdownLevels.addEventListener("click", selectLevel);
-
-  // for (i = 1; i < dropdownLevels.length; i++) {
-  //   console.log(i, dropdownLevels[i].value);
-  // if (dropdownLevels[i].value === "1") {
-  //   console.log("player chose level 1");
-  //   dropdownLevels[i].onclick = loadCards(cardsLevel1);
-  // }
-  // }
-  //dropdownLevels.forEach(function (level) {});
 }
 
 function loadCards(levelCards) {
@@ -209,9 +188,8 @@ function congratulations() {
   }
 }
 //PROBLEM CLOSING THE POP-UP WINDOW
-function playAgain() {
-  document.querySelector("#popup-congrats").classList.add("hide");
-
-  console.log("replay");
-  startGame();
-}
+// function playAgain() {
+//   document.querySelector("#popup-congrats").classList.add("hide");
+//   console.log("replay");
+//   startGame();
+// }
