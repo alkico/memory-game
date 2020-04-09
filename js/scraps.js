@@ -1,3 +1,34 @@
+//load game
+window.addEventListener("load", (event) => {
+  let html = "";
+  let shuffledCards = shuffleCards(cards); //after this I can use cards normally because it has been mutated to new shuffled array and returned in this function
+  //console.log(shuffledCards);
+  //THIS IS WORKING BUT ONLY SOME OF THE TIME - PROBLEM DEBUGGING
+  /*memoryGame.cards.*/ /*memoryGame.*/ shuffledCards.forEach((card) => {
+    // html += `<div class="card" data-card-name="${card.name}">`;
+    // html += `<div class="front" style="background-image: url(./imgs/image.jpg) no-repeat width:200px; height: auto"></div>`;
+    // html += `<div class="back" name="${card.name}"></div>`;
+
+    //   html += `<div class="front" style="background: url(./imgs/${card.img}) no-repeat width:200px; height: auto"></div>`;
+    html += `</div>`;
+    html += `<div class="card" data-card-name="${card.name}">`;
+    html += `<div class="back" name="${card.img}"></div>`;
+    html += `<div class="front" style="background: url(./imgs/${card.img}) no-repeat"></div>`;
+    html += `</div>`;
+  });
+
+  // Add all the divs to the HTML.
+  document.querySelector("#memory-board").innerHTML = html;
+
+  // Link the click event for each element(i.e. card) to a function to flipCard function
+  document
+    .querySelectorAll(".card")
+    .forEach((card) => card.addEventListener("click", flipCard));
+  startTimer();
+  //ALTERNATELY: FLIP METHOD ONE USING FLIP CLASS THAT TOGGLES + CSS ROTATE PROPERTY TO ROTATE HTML ELEMENTS&
+  //AND TO MAKE OPPOSITE SIDES INVISIBLE AFTER ROTATING. REQUIRES CHANGES TO CSS.
+});
+
 function checkIfPair(firstCard, secondCard) {
   //add one to pairsClicked property
   //if cards are the same, add 1 to pairsGuessed
@@ -26,7 +57,6 @@ function checkIfPair(firstCard, secondCard) {
   function unflipCards() {
     // called if two cards are not matching cards
     console.log("test unflip cards");
-    //this.classList.add("flip");
     setTimeout(() => {
       document.querySelectorAll(".card").classList.remove("flip");
     }, 2000);

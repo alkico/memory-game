@@ -50,16 +50,6 @@ p {
   margin-top: 2%;
   perspective: 1000px;
 }
-
-/*.gameover-pop-up {
-  width: 90%;
-  height: 85%;
-  margin: auto;
-  margin-top: 2%;
-  visibility: hidden;
-}
-*/
-
 .card {
   display: flex;
   align-items: stretch;
@@ -107,6 +97,10 @@ p {
   left: 0;
   top: 0;
   transform: rotateY(180deg) /*translateZ(1px)*/;
+  background-size: 50% 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: #fff;
 }
 
@@ -139,6 +133,20 @@ footer {
   background-color: hotpink;
   color: white;
 }
+
+#popup-congrats {
+  background-color: #fff;
+  visibility: hidden;
+}
+
+/*.gameover-pop-up {
+  width: 90%;
+  height: 85%;
+  margin: auto;
+  margin-top: 2%;
+  visibility: hidden;
+}
+*/
 
 /*
 #Level {
