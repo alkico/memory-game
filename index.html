@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory 2.0</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="game-header">
+      <h1>MEMORY 2.0</h1>
+      <div class="game-stats">
+        <p>Level: <span id="level">1</span></p>
+        <p id="count-wrong-guesses">Mistakes: <span>0</span></p>
+        <div>
+          <p id="timer">Time: 0:00</p>
+        </div>
+      </div>
+    </div>
+    <!--player levels: beginner(12 cards, images), intermediate(24 cards quotes/names+imgs), advanced (48cards quotes/names+imgs split)-->
+    <div id="memory-board"></div>
+    <footer>
+      <div class="start-game-button">Start new game</div>
+    </footer>
+    <script type="text/javascript" src="./js/cards.js"></script>
+    <script type="text/javascript" src="./js/game.js"></script>
+    <script type="text/javascript" src="./js/main.js"></script>
+  </body>
+</html>

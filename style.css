@@ -1,0 +1,159 @@
+* {
+  font-family: "Verdana", "Arial", "Sans-Serif";
+  margin: 0;
+  box-sizing: border-box; /*as oppossed to content-box. Border-box adds padding&margin WITHIN box, i.e. shrinks the box size to keep original measurements*/
+}
+
+body {
+  background-image: url("./imgs/sharon-mccutcheon-ouRjPLWGbPc-unsplash.jpg");
+  background-size: cover;
+  height: 100vh; /*i.e. 100% of available height space*/
+}
+
+h1 {
+  padding: 1%;
+  border-style: solid;
+  width: 40%;
+  font-size: 30px;
+  color: white;
+}
+
+p {
+  font-weight: bold;
+  border-style: solid;
+  font-size: 20px;
+  color: white;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-evenly;
+  border-style: solid;
+}
+
+.game-stats {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-style: solid;
+}
+
+#memory-board {
+  border: solid;
+  width: 90%;
+  height: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: auto;
+  margin-top: 2%;
+  perspective: 1000px;
+}
+
+/*.gameover-pop-up {
+  width: 90%;
+  height: 85%;
+  margin: auto;
+  margin-top: 2%;
+  visibility: hidden;
+}
+*/
+
+.card {
+  display: flex;
+  align-items: stretch;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:active {
+  transform: scale(0.96);
+  transition: transform 0.2s;
+}
+
+.card.flip {
+  pointer-events: none;
+  /*transform: rotateY(180deg);*/
+}
+
+.card.flip .front {
+  transform: rotateY(0deg);
+}
+.card.flip .back {
+  transform: rotateY(180deg);
+}
+
+.card .back,
+.card .front {
+  display: flex;
+  width: 140px;
+  height: 90%;
+  margin: 0.5%;
+  border-radius: 10px;
+  transition: transform 0.4s;
+  backface-visibility: hidden;
+}
+
+.card .back {
+  background-image: url("./imgs/card-background-2.jpg");
+  background-size: cover;
+  /*transform: rotateY(180deg);*/
+}
+
+.card .front {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotateY(180deg) /*translateZ(1px)*/;
+  background-color: #fff;
+}
+
+.match {
+  visibility: hidden;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+.start-game-button {
+  justify-content: center;
+  transition-duration: 0.4s;
+  background-color: #fff;
+  font-size: 1.2em;
+  border-radius: 5px;
+  margin-top: 2%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  color: hotpink;
+}
+
+.start-game-button:hover {
+  background-color: hotpink;
+  color: white;
+}
+
+/*
+#Level {
+  background-color: rgba(215, 44, 44, 0.8);
+  border-radius: 8px;
+  font-size: 30px;
+  font-family: Arial;
+  width: 200px;
+  padding: 20px;
+  padding-top: 0;
+  margin-left: 75%;
+}
+*/
+/*
+.container {
+  position: relative;
+}
+*/
