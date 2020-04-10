@@ -5,3 +5,4 @@ class MemoryGame {
     this.pairsClicked = 0;
     this.wrongGuesses = 0;
   }
+}

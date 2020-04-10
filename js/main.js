@@ -1,3 +1,6 @@
+// textFit(document.querySelector("h1"));
+// textFit(document.querySelector("p"));
+// textFit(document.querySelector(".start-game-button"));
 //const memoryGame = new MemoryGame(cards);
 let memoryBoard = document.querySelector("#memory-board");
 let wrongGuesses = 0;
@@ -49,7 +52,7 @@ function selectLevel(event) {
 function loadCards(levelCards) {
   console.log(levelCards);
   let html = "";
-  shuffledCards = shuffleCards(cards[levelCards]); //levelcards[2]
+  shuffledCards = shuffleCards(cards[levelCards]);
   shuffledCards.forEach((card) => {
     html += `<div class="card" data-card-name="${card.name}">`;
     html += `<div class="back" name="${card.name}"></div>`;
@@ -114,13 +117,14 @@ function flipCard() {
 function checkIfMatching() {
   if (firstCard.dataset.cardName !== secondCard.dataset.cardName) {
     countWrongGuesses();
-    console.log("it's not a match!", this);
+    //console.log("it's not a match!", this);
     setTimeout(() => {
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
     }, 2000);
     cardsUnmatched();
   } else {
+    disableCards();
     setTimeout(function () {
       cardsMatched();
     }, 2000);
@@ -146,6 +150,7 @@ function cardsMatched() {
   matchedCards.push(pickedCards[0]);
   matchedCards.push(pickedCards[1]);
   pickedCards = [];
+  enableCards();
   congratulations();
 }
 
