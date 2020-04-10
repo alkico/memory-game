@@ -80,10 +80,10 @@ function shuffleCards(cards) {
 
 function startTimer() {
   interval = setInterval(function () {
-    timer.innerHTML = minutes + ":0" + seconds;
+    timer.innerHTML = "Time: " + minutes + ":0" + seconds;
     seconds += 1;
     if (seconds > 9 && seconds < 60) {
-      timer.innerHTML = minutes + ":" + seconds;
+      timer.innerHTML = "Time: " + minutes + ":" + seconds;
     }
     if (seconds === 60) {
       minutes += 1;
@@ -189,9 +189,3 @@ function congratulations() {
       .addEventListener("click", startGame);
   }
 }
-//PROBLEM CLOSING THE POP-UP WINDOW
-// function playAgain() {
-//   document.querySelector("#popup-congrats").classList.add("hide");
-//   console.log("replay");
-//   startGame();
-// }
