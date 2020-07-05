@@ -80,6 +80,28 @@ const cardsLevel1 = [
     quote: "'Alright, I AM the messiah! Now, FUCK OFF!' — Life of Brian",
     img: "noun_Jesus_1290448.png",
   },
+  {
+    name: "Charlie Chaplin",
+    quote: "'A day without laughter is a day wasted.'— Charlie Chaplin",
+    img: "icons8-charlie-chaplin-64.png",
+  },
+  {
+    name: "Charlie Chaplin",
+    quote: "'A day without laughter is a day wasted.'— Charlie Chaplin",
+    img: "icons8-charlie-chaplin-64.png",
+  },
+  {
+    name: "Albert Einstein",
+    quote:
+      "'Strive not to be a success, but rather to be of value.'—Albert Einstein",
+    img: "noun_Albert Einstein_56652.png",
+  },
+  {
+    name: "Albert Einstein",
+    quote:
+      "'Strive not to be a success, but rather to be of value.'—Albert Einstein",
+    img: "noun_Albert Einstein_56652.png",
+  },
 ];
 
 const cardsLevel2 = [

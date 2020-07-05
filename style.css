@@ -87,8 +87,8 @@ select {
 
 .card .back,
 .card .front {
-  width: 110px;
-  height: 155px;
+  width: 120px;
+  height: 160px;
   margin-bottom: 4%;
   border-radius: 8px;
   transition: transform 0.4s;
