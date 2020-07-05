@@ -1,29 +1,3 @@
-// textFit(document.querySelector("h1"));
-// textFit(document.querySelector("p"));
-// textFit(document.querySelector(".start-game-button"));
-//const memoryGame = new MemoryGame(cards);
-let memoryBoard = document.querySelector("#memory-board");
-let wrongGuesses = 0;
-//SETTIMER FUNCTION
-let timer = document.getElementById("timer");
-let seconds = 0;
-let minutes = 0;
-let interval;
-//FLIPCARDS, MATCHCARDS FUNCTIONS
-let cardWasFlipped = false;
-let firstCard, secondCard;
-let pickedCards = [];
-let shuffledCards = undefined;
-let matchedCards = [];
-//SELECT LEVEL FUNCTION
-let level = 0;
-let inputValue;
-//EVENT LISTENERS
-document
-  .querySelector(".start-game-button")
-  .addEventListener("click", startGame);
-document.querySelector(".select-level").addEventListener("input", selectLevel);
-
 function resetValues() {
   seconds = 0;
   minutes = 0;
@@ -40,26 +14,24 @@ function startGame() {
   let objectInput = { target: { value: inputValue } };
   selectLevel(objectInput);
 }
+
 function selectLevel(event) {
   resetValues();
-  console.log(event.target.value);
-  inputValue = parseInt(event.target.value); //line 41 here because of 46
-  console.log(inputValue);
+  inputValue = parseInt(event.target.value);
   loadCards(event.target.value - 1);
   startTimer();
 }
 
 function loadCards(levelCards) {
-  console.log(levelCards);
   let html = "";
   shuffledCards = shuffleCards(cards[levelCards]);
   shuffledCards.forEach((card) => {
     html += `<div class="card" data-card-name="${card.name}">`;
     html += `<div class="back" name="${card.name}"></div>`;
-    html += `<div class="front" style="background-image: url('./imgs/${card.img}')"><div id="quote">${card.quote}</div></div>`;
+    html += `<div class="front"><img src='./imgs/${card.img}' width="45" height="45"><div id="quote">${card.quote}</div></div>`;
     html += `</div>`;
   });
-  memoryBoard.innerHTML = html; // Add all the divs to the HTML.
+  memoryBoard.innerHTML = html;
   memoryBoard.innerHTML += `<div id="popup-congrats" class="hide"><div class="modal-content" style="background-image: url('../imgs/H8EN.gif')">Nicely done!</div></div>`;
   document
     .querySelectorAll(".card")
@@ -67,17 +39,16 @@ function loadCards(levelCards) {
 }
 
 function shuffleCards(cards) {
-  //console.log(JSON.parse(JSON.stringify(cards))); //creates deep copy and shows ORIGINAL cards array
   if (!cards) {
     return undefined;
   } else {
     for (let i = 0; i < cards.length - 1; i++) {
-      let j = Math.floor(Math.random() * cards.length); //don't need +1 because length starts fm 0
+      let j = Math.floor(Math.random() * cards.length);
       let temp = cards[j];
       cards[j] = cards[i];
       cards[i] = temp;
     }
-    return cards; //swaps position of card at index i (0 thru till last cast) and card at random index j
+    return cards;
   }
 }
 
@@ -103,7 +74,7 @@ function flipCard() {
   this.classList.add("flip");
   if (!cardWasFlipped) {
     cardWasFlipped = true;
-    firstCard = this; //ie the first card they clicked is assigned to firstCard variable
+    firstCard = this;
     pickedCards.push(firstCard);
     return;
   } else {
@@ -117,7 +88,6 @@ function flipCard() {
 function checkIfMatching() {
   if (firstCard.dataset.cardName !== secondCard.dataset.cardName) {
     countWrongGuesses();
-    //console.log("it's not a match!", this);
     setTimeout(() => {
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
@@ -140,7 +110,7 @@ function countWrongGuesses() {
 function resetWrongGuesses() {
   wrongGuesses = 0;
   document.getElementById("count-wrong-guesses").innerHTML =
-    "Incorrect guesses: " + wrongGuesses;
+    "Wrong guesses: " + wrongGuesses;
   timer.innerHTML = "Time: 0:00";
 }
 
@@ -181,16 +151,18 @@ function enableCards() {
 }
 
 function congratulations() {
-  console.log(matchedCards.length, shuffledCards.length);
   if (matchedCards.length === shuffledCards.length) {
     clearInterval(interval);
-
     let finalTime = timer.innerHTML;
     document.getElementById("popup-congrats").classList.remove("hide");
-    console.log("Congratulations, you have found all the pairs!");
-    //matchedCards = [];
     document
       .querySelector("#popup-congrats")
       .addEventListener("click", startGame);
   }
 }
+
+//EVENT LISTENERS
+document
+  .querySelector(".start-game-button")
+  .addEventListener("click", startGame);
+document.querySelector(".select-level").addEventListener("input", selectLevel);

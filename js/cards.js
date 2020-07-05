@@ -70,6 +70,26 @@ const cardsLevel1 = [
       "'The difference between good luck & bad luck is what separates successful adventurers from dead ones'—Puss in Boots",
     img: "noun_puss_2199117.png",
   },
+  {
+    name: "Life of Brian",
+    quote: "'Alright, I AM the messiah! Now, FUCK OFF!' — Life of Brian",
+    img: "noun_Jesus_1290448.png",
+  },
+  {
+    name: "Life of Brian",
+    quote: "'Alright, I AM the messiah! Now, FUCK OFF!' — Life of Brian",
+    img: "noun_Jesus_1290448.png",
+  },
+  {
+    name: "Charlie Chaplin",
+    quote: "'A day without laughter is a day wasted.'— Charlie Chaplin",
+    img: "icons8-charlie-chaplin-64.png",
+  },
+  {
+    name: "Charlie Chaplin",
+    quote: "'A day without laughter is a day wasted.'— Charlie Chaplin",
+    img: "icons8-charlie-chaplin-64.png",
+  },
 ];
 
 const cardsLevel2 = [
