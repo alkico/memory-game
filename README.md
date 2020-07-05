@@ -21,4 +21,4 @@ Keep playing to improve your time and reduce the number of incorrect guesses!
 
 ## Play it here: 
 
-https://github.com/alkico/memory-game/deployments/activity_log?environment=github-pages
+https://alkico.github.io/memory-game/
