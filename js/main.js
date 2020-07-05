@@ -28,7 +28,11 @@ function loadCards(levelCards) {
   shuffledCards.forEach((card) => {
     html += `<div class="card" data-card-name="${card.name}">`;
     html += `<div class="back" name="${card.name}"></div>`;
-    html += `<div class="front"><img src='./imgs/${card.img}' width="45" height="45"><div id="quote">${card.quote}</div></div>`;
+    if (card.img) {
+      html += `<div class="front"><img src='./imgs/${card.img}' width="45" height="45"><div id="quote">${card.quote}</div></div>`;
+    } else if (!card.img) {
+      html += `<div class="front"><div id="quote">${card.quote}</div></div>`;
+    }
     html += `</div>`;
   });
   memoryBoard.innerHTML = html;
