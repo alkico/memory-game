@@ -57,9 +57,10 @@ select {
 #memory-board {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   margin: auto;
-  width: 960px;
+  padding-top: 1vh;
+  width: 1260px;
 }
 
 .card {
@@ -87,8 +88,8 @@ select {
 
 .card .back,
 .card .front {
-  width: 140px;
-  height: 180px;
+  width: 180px;
+  height: 220px;
   margin-bottom: 4%;
   border-radius: 8px;
   transition: transform 0.4s;
@@ -113,7 +114,7 @@ select {
   padding: 2%;
   background-repeat: no-repeat;
   background-color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   font-style: oblique;
 }
 
@@ -123,12 +124,6 @@ select {
 
 .disabled {
   pointer-events: none;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 2%;
 }
 
 #count-wrong-guesses,
