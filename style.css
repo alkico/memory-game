@@ -59,7 +59,7 @@ select {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: auto;
-  width: 90%;
+  width: 960px;
 }
 
 .card {
@@ -87,8 +87,8 @@ select {
 
 .card .back,
 .card .front {
-  width: 120px;
-  height: 160px;
+  width: 140px;
+  height: 180px;
   margin-bottom: 4%;
   border-radius: 8px;
   transition: transform 0.4s;
@@ -113,7 +113,7 @@ select {
   padding: 2%;
   background-repeat: no-repeat;
   background-color: #fff;
-  font-size: 11px;
+  font-size: 14px;
   font-style: oblique;
 }
 
