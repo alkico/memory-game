@@ -13,6 +13,7 @@ function startGame() {
   startTimer();
   let objectInput = { target: { value: inputValue } };
   selectLevel(objectInput);
+  document.getElementById("popup-congrats").classList.add("hide");
 }
 
 function selectLevel(event) {
